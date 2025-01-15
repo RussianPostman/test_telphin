@@ -17,3 +17,26 @@ docker-compose up -d --build
 Документация будет доступна по "http://localhost:8004/docs"
 
 Оттуда же можно попроьбовать единственный эндпоинт
+
+Так же можно запустить без докера:
+
+1. Развернуть виртуальное окружение и установить зависимости 
+
+- для MacOS
+```
+python3 -m venv venv
+source venv/bin/activate
+```
+- для Windows
+```
+python -m venv venv
+source venv/Scripts/activate
+```
+2. Установить зависимости
+```
+pip install requirements.txt
+```
+3. Запустить веб сервис
+```
+uvicorn api_project.composites.api:app --host 0.0.0.0 --reload
+```
